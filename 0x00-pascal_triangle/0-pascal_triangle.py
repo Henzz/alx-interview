@@ -15,7 +15,7 @@ def comb(a, b):
     return factorial(a) // (factorial(b) * (factorial(a - b)))
 
 
-def pascal_triangle(n):
+def pascal_triangles(n):
     """ Representing the Pascals triangle of n. """
     # Define matrix
     matrix = []
@@ -38,3 +38,30 @@ def pascal_triangle(n):
     # Return list of list
     return matrix
 
+def pascal_triangle(n):
+  """
+  Generates Pascal's Triangle up to the nth row.
+
+  Args:
+      n: An integer representing the number of rows in the triangle.
+
+  Returns:
+      A list of lists containing the integers of Pascal's Triangle.
+      Returns an empty list if n <= 0.
+  """
+
+  if n <= 0:
+    return []
+
+  triangle = []
+  # First row is always [1]
+  triangle.append([1])
+
+  # Iterate for subsequent rows
+  for i in range(1, n):
+    prev_row = triangle[i-1]
+    # Create a new row with 1 prepended and appended
+    current_row = [1] + [prev_row[j] + prev_row[j + 1] for j in range(len(prev_row) - 1)] + [1]
+    triangle.append(current_row)
+
+  return triangle
