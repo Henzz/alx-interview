@@ -39,29 +39,25 @@ def pascal_triangles(n):
     return matrix
 
 def pascal_triangle(n):
-  """
-  Generates Pascal's Triangle up to the nth row.
+    """
+    Generates Pascal's Triangle up to the nth row.
 
-  Args:
+    Args:
       n: An integer representing the number of rows in the triangle.
 
-  Returns:
+    Returns:
       A list of lists containing the integers of Pascal's Triangle.
       Returns an empty list if n <= 0.
-  """
-
-  if n <= 0:
-    return []
-
-  triangle = []
-  # First row is always [1]
-  triangle.append([1])
-
-  # Iterate for subsequent rows
-  for i in range(1, n):
-    prev_row = triangle[i-1]
-    # Create a new row with 1 prepended and appended
-    current_row = [1] + [prev_row[j] + prev_row[j + 1] for j in range(len(prev_row) - 1)] + [1]
-    triangle.append(current_row)
-
-  return triangle
+    """
+    k = []
+    if n <= 0:
+        return k
+    k = [[1]]
+    for i in range(1, n):
+        temp = [1]
+        for j in range(len(k[i - 1]) - 1):
+            curr = k[i - 1]
+            temp.append(k[i - 1][j] + k[i - 1][j + 1])
+        temp.append(1)
+        k.append(temp)
+    return k
