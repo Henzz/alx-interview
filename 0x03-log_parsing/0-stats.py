@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-This script reads stdin line by line and computes metrics.
+Log Parsing Script
+
+This script reads input lines from stdin, computes various metrics,
+and prints the results.
 """
 
 import sys
