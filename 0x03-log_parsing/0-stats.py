@@ -55,14 +55,14 @@ if __name__ == "__main__":
             lines.append(line)
             if len(lines) == 10:
                 total_size, status_codes = compute_metrics(lines)
-                print(f'Total file size: File size: {total_size}')
+                print("Total file size: {0}".format(total_size))
                 for code, count in sorted(status_codes.items()):
                     if count > 0:
-                        print(f'{code}: {count}')
+                        print("{0}: {1}".format(code, count))
                 lines = []
     except KeyboardInterrupt:
         total_size, status_codes = compute_metrics(lines)
-        print(f'Total file size: File size: {total_size}')
+        print("Total file size: {0}".format(total_size))
         for code, count in sorted(status_codes.items()):
             if count > 0:
-                print(f'{code}: {count}')
+                print("{0}: {1}".format(code, count))
