@@ -40,19 +40,20 @@ def compute_metrics(lines):
     return total_size, status_codes
 
 
-try:
-    lines = []
-    while True:
-        line = input().strip()
-        lines.append(line)
-        if len(lines) == 10:
-            total_size, status_codes = compute_metrics(lines)
-            print(f'Total file size: File size: {total_size}')
-            for code in sorted(status_codes):
-                print(f'{code}: {status_codes[code]}')
-            lines = []
-except KeyboardInterrupt:
-    total_size, status_codes = compute_metrics(lines)
-    print(f'Total file size: File size: {total_size}')
-    for code in sorted(status_codes):
-        print(f'{code}: {status_codes[code]}')
+if __name__ == "__main__":
+    try:
+        lines = []
+        while True:
+            line = input().strip()
+            lines.append(line)
+            if len(lines) == 10:
+                total_size, status_codes = compute_metrics(lines)
+                print(f'Total file size: File size: {total_size}')
+                for code in sorted(status_codes):
+                    print(f'{code}: {status_codes[code]}')
+                lines = []
+    except KeyboardInterrupt:
+        total_size, status_codes = compute_metrics(lines)
+        print(f'Total file size: File size: {total_size}')
+        for code in sorted(status_codes):
+            print(f'{code}: {status_codes[code]}')
