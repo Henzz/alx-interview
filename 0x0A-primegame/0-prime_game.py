@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def isWinner(x, nums):
     """
     Determines the winner of a series of
