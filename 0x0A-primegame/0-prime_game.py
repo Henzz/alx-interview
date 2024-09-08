@@ -1,23 +1,29 @@
 def isWinner(x, nums):
     """
-    Determines the winner of a series of prime number games played by Maria and Ben.
+    Determines the winner of a series of
+    prime number games played by Maria and Ben.
 
-    Each game consists of consecutive integers from 1 to n, where players take turns 
-    picking a prime number and removing it along with its multiples from the set. 
-    The player unable to make a move loses. 
+    Each game consists of consecutive integers
+    from 1 to n, where players take turns
+    picking a prime number and removing it
+    along with its multiples from the set.
+    The player unable to make a move loses.
 
     Parameters:
     x (int): The number of rounds played.
-    nums (List[int]): A list containing the values of n for each round.
+    nums (List[int]): A list containing the values
+    of n for each round.
 
     Returns:
-    str or None: The name of the player who won the most rounds ('Maria' or 'Ben').
-                 If there is a tie, returns None.
+    str or None: The name of the player who won
+                the most rounds ('Maria' or 'Ben').
+                If there is a tie, returns None.
     """
-    
+
     def generate_primes(n):
         """
-        Generates a list of prime numbers up to n using the Sieve of Eratosthenes.
+        Generates a list of prime numbers up to n using
+        the Sieve of Eratosthenes.
 
         Parameters:
         n (int): The upper limit to generate prime numbers.
@@ -48,7 +54,7 @@ def isWinner(x, nums):
             return 'Ben'  # No primes available, Ben wins by default.
         primes = generate_primes(n)
         prime_count = len(primes)
-        
+
         # The winner is determined by the count of primes
         return 'Maria' if prime_count % 2 == 1 else 'Ben'
 
@@ -68,8 +74,3 @@ def isWinner(x, nums):
         return 'Ben'
     else:
         return None
-
-# Example usage:
-x = 3
-nums = [4, 5, 1]
-print(isWinner(x, nums))  # Output: Ben
