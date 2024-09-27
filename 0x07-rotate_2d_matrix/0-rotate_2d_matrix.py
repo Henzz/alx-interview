@@ -6,11 +6,11 @@
 def rotate_2d_matrix(matrix):
     """Rotates an m by n 2D matrix in place.
     """
-    if type(matrix) != list:
+    if type(matrix) is not list:
         return
     if len(matrix) <= 0:
         return
-    if not all(map(lambda x: type(x) == list, matrix)):
+    if not all(map(lambda x: type(x) is list, matrix)):
         return
     rows = len(matrix)
     cols = len(matrix[0])
