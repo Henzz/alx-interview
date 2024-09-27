@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+'''A script for parsing HTTP request logs.
+'''
 import sys
 import re
 from collections import defaultdict
